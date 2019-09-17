@@ -4,7 +4,9 @@
   "description": "This is the react version of my bootcamp project.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js"
+    "start": "serve -s ./build",
+    "dev": "webpack-dev-server --config webpack.config.js",
+    "build":"webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
+    "serve": "^11.1.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0"
