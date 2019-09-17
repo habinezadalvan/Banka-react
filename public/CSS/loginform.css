@@ -1,0 +1,177 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(149,165,166 ,0.9), rgba(52,73,94 ,0.9)), url(https://images.pexels.com/photos/1451448/pexels-photo-1451448.jpeg?cs=srgb&dl=analysis-banking-businesswoman-1451448.jpg&fm=jpg);
+    background-size: cover;
+}
+/* css styles for login UI */
+
+.login{
+    position: relative;
+    margin: 150px auto;
+    width: 30%;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 5px rgba(0,0,0,.5);
+    transition: transform 1s;
+    /* animation: 2s animation; */
+    animation-fill-mode: forwards;
+}
+@keyframes animation{
+    0%{top:-100px;}
+    100%{top:0px;}
+}
+
+.login h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #1da1f2;
+    text-align: center;
+}
+.login .loginInput{
+    position: relative;
+    margin-left: 50px;
+    width: 90%;
+}
+.login .loginInput input{
+    width: 85%;
+    padding: 17px 0 17px 17px;
+    margin: 10px auto auto 0px;
+    font-size: 16px;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background:transparent;
+    border: 1px solid #1da1f2;
+    outline: none;
+}
+
+
+.login input[type="submit"]{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #1da1f2;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 18px;
+    text-align: center;
+    margin:20px 0 20px 50px;
+    width: 79%;
+}
+.login input[type="submit"]:hover{
+    background: #1da1f2;
+    opacity: .9;
+    color: white;
+}
+.closelogin-icon{
+    text-decoration: none;
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 15px;
+
+}
+
+/* media queries for login */
+
+@media (min-width: 1800px){
+    .login .loginInput{
+        margin: 0 auto 0 210px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+     .login{
+        width: 50%;
+    }
+    .login input[type="submit"]{
+        margin: 15px auto 0 210px;
+        width: 70%;
+        margin-bottom: 30px;
+    }
+}
+
+
+@media (max-width: 1440px){
+    .login .loginInput{
+        /* margin-left: 120px; */
+        margin: 0 auto 0 105px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+    .login{
+        width: 50%;
+    }
+    .login input[type="submit"]{
+        margin: 15px auto 0 105px;
+        margin-bottom: 30px;
+        width: 71%;
+    }
+}
+@media (max-width: 1024px){
+    .login .loginInput{
+        margin-left: 90px;
+    }
+    .login{
+        width: 60%;
+    }
+    .login input[type="submit"]{
+        margin-left: 90px;
+        margin-bottom: 30px;
+        width: 71%;
+    }
+}
+@media (max-width: 768px){
+    .login .loginInput{
+        margin-left: 70px;
+    }
+    .login{
+        width: 70%;
+    }
+    .login input[type="submit"]{
+        margin-left: 68px;
+        margin-bottom: 30px;
+        width: 72%;
+    }
+}
+@media (max-width: 425px){
+    .login .loginInput{
+        margin: 0 auto 0 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .login{
+        width: 90%;
+    }
+    .login input[type="submit"]{
+        margin-left: 23px;
+        width: 88%;
+        margin-bottom: 30px;
+    }
+}
+
+.backButton i {
+    position: relative;
+    font-size: 100px;
+    color: white;
+}
+
+.errMessage{
+    display: none;
+    color: red;
+} 
+
+.signupconflictmsg{
+    text-align: center;
+    margin-top: 10px;
+    color: #1da1f2;
+}
