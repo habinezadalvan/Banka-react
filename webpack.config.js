@@ -49,7 +49,8 @@ module.exports = {
         new copyPlugin([
             {from: path.join(__dirname, '/public', '/CSS'), to: path.join(__dirname, '/build', '/CSS')}
         ]),
-        new Dotenv()
+        new Dotenv(),
+        new webpack.EnvironmentPlugin(['BASE_URL', 'NODE_ENV'])
     ],
     devtool: 'none',
     devServer:{
