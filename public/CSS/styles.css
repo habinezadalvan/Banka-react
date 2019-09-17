@@ -1,0 +1,1595 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+}
+.container{
+    height: 100%;
+}
+/* navigation bar styling */
+.navbar{
+
+    /* background-color:#4f7de0; */
+    display: flex;
+    width: 100%;
+    height: 9.5%;
+    
+    
+}
+#navbarId{
+    transition: margin-left 0.5s; 
+}
+#barsmenu{
+    transition-delay:0.5s;
+}
+.navbar1{
+  
+    flex-basis: 70%;
+    display: flex;
+}
+.navbar .navbar1 a{
+  
+    text-decoration: none;
+    margin:0;
+    padding: 23px 40px;
+    text-align: center;
+    font-size: 22px;
+    font-family: arial,serif;
+    color: rgb(253, 176, 9);
+    float: left;
+    position: relative;
+    
+}
+.navbar ul{
+  
+    flex-basis: 90%;
+    height:100%;
+    list-style: none;
+    margin:0;
+
+    
+}
+.navbar a:hover{
+    background-color: #46619b;
+    color: #ddd;
+}
+
+.fa-bars{
+    margin:15px 10px 10px 15px;
+    font-size: 30px;
+    color: #1da1f2;
+    display: none;
+}
+
+
+.navbar2{
+ 
+    flex-basis: 30%;
+    color: white;
+    font-size: 40px;
+    padding-top: 10px;
+    text-align: center;
+    margin-left: auto;
+    transform: translateX(-15%);
+    transition-delay: 1.2, 0ms;
+    animation: 10s banka infinite;
+
+}
+
+@keyframes banka{
+    0%{color: white;margin-right:0;margin-left: 0;}
+    25%{color: #1da1f2;margin-right: 15px; margin-left: 0;}
+    50%{color: #1da1f2;margin-right: 0; margin-left: 15px;}
+    75%{color: teal;margin-right: 15px; margin-left: 0;}
+    100%{color: white;margin-right: 15px; margin-left: 0;}
+}
+
+/* side nav bar styling */
+
+.side-nav-bar{
+    display: none;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background-color: #6b9aff;
+    opacity: .9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+}
+
+.side-nav-bar a{
+    text-decoration: none;
+    padding: 10px 10px 10px 15px;
+    display: block;
+    font-size: 20px;
+    color:#fff;
+    
+}
+
+.side-nav-bar a:hover{
+    color: #3b5998;
+}
+.side-nav-bar .close-icon{
+    position:absolute;
+    top: 0px;
+    right: 15px;
+    font-size: 30px;
+    display: none;
+}
+
+/* welcome page media query */
+@media (max-width:2559px){
+    .navbar{
+        width: 100%;
+    }
+}
+@media (max-width:1024px){
+    .navbar{
+        width: 100%;
+        height: 69px;
+    }
+    .navbar .navbar1{
+        width: 90%;
+
+    }
+    .navbar .navbar2{
+        width: 20%;
+    }
+    .navbar .navbar1 a{
+        display: inline ;
+        padding: 23px 18px;
+        font-size: 12px;
+    }
+   
+}
+@media (max-width:959px){
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-position: relative;
+       
+    }
+    .navbar {
+        width: 100%;
+        height: 67px;
+    }
+    .navbar .navbar1{
+        width: 90%;
+
+    }
+    .navbar .navbar2{
+        width: 20%;
+    }
+    .navbar .navbar1 a{
+        display: inline ;
+        padding: 23px 10px;
+        font-size: 15px;
+    }
+    .fa-bars{
+        display: none;
+    }
+    .side-nav-bar .close-icon{
+        display: none;
+    }
+    
+}
+
+@media (max-width:640px){
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .navbar{
+        width: 100%;
+        position: relative;
+        position: fixed top;
+
+    }
+    .navbar .navbar1 a{
+        display: none;
+    }
+    .fa-bars{
+        display: block;
+    }
+    .side-nav-bar .close-icon{
+        display: block;
+    }
+    .side-nav-bar{
+        display: block;
+        width: 25%;
+    }
+    .side-nav-bar a{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+    }
+    .navbar .navbar2 {
+        font-size: 25px;
+    }
+   
+}
+
+/* MAIN AREA STYLING */
+
+#main-area{
+   
+   display: flex;
+   flex-direction: column;
+   transition: margin-left 0.5s; 
+   width: 100%;
+   height: 100%;
+   padding: 0;
+   margin:0;
+}
+#main-area .main-area-images{
+  
+    width: 100%;
+}
+
+#main-area .slider{
+   
+    height: 50%;
+    flex-basis: 50%;
+    overflow: hidden;
+    background: #0c2d75;
+    opacity: .9;
+    z-index: 3;
+}
+#main-area .non-slider{
+    
+    height: 40%; 
+    flex-basis: 50%;
+}
+
+#main-area .slider figure div{
+    width: 20%;
+    float: left;
+
+}
+#main-area .slider figure img{
+    width: 100%;
+    float: left;
+    opacity: .3;
+    z-index: 0;
+
+}
+#main-area .slider figure{
+    width: 500%;
+    position: relative;
+    margin: 0;
+    left: 0;
+    animation: 30s moveimage infinite;
+}
+@keyframes moveimage{
+    0%{
+        left: 0%;
+    }
+    10%{
+        left: 0%;
+    }
+    12%{
+        left: -100%;
+    }
+    22%{
+        left:-100%;
+    }
+    24%{
+        left: -200%;
+    }
+    34%{
+        left: -200%;
+    }
+    36%{
+        left: -300%;
+    }
+    46%{
+        left: -300%;
+    }
+    48%{
+        left: -400%;
+    }
+    58%{
+        left: -400%;
+    }
+    60%{
+        left: -300%;
+    }
+    70%{
+        left: -300%;
+    }
+    72%{
+        left: -200%;
+    }
+    82%{
+        left: -200%;
+    }
+    84%{
+        left: -100%;
+    }
+    94%{
+        left: -100%;
+    }
+    
+}
+/* styles for paragraphs on the sliding images */
+#main-area .slider p{
+    font-size: 30px;
+    font-weight: 900;
+    color: rgb(253, 176, 9);
+    text-align: center;
+    position: absolute;
+    padding-top: 180px;
+    width: 20%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    z-index: 9;
+}
+#main-area .slider .longParagraph p{
+    font-size: 25px;
+}
+#main-area .slider .paragraph p{
+    color: white;
+}
+#main-area .slider h1{
+    font-size: 80px;
+    font-weight: bold;
+    color: rgb(253, 176, 9);
+    text-align: center;
+    position: absolute;
+    padding-top: 140px;
+    width: 20%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    z-index: 9;
+
+}
+#main-area .slider .Two p{
+    color: goldenrod;
+}
+#main-area .slider .Three p{
+    color: white;
+}
+
+/* MEDIA QUERIES FOR MAIN DIVs */
+@media (max-width: 1440px){
+    body{
+        height: 100%;
+    }
+    .container{
+        height: 100%;
+    }
+    .navbar{
+        height: 17%;
+    }
+    #main-area{
+        height: 100%;
+    }
+    #main-area .slider{
+       
+        height: 100%;
+        flex-basis: 50%;
+    }
+    #main-area .non-slider{
+       
+        height: 100%;    
+        flex-basis: 50%;
+    }
+    #main-area .slider p{
+        font-size: 27px;
+    }
+}
+@media (max-width: 1024px){
+    body{
+        height: 100%;
+    }
+    .container{
+        height: 100%;
+    }
+    .navbar{
+        height: 15%;
+    }
+    #main-area{
+        height: 100%;
+    }
+    #main-area .slider{
+
+        height: 100%;
+        flex-basis: 50%;
+    }
+    #main-area .non-slider{
+      
+        height: 100%;    
+        flex-basis: 50%;
+    }
+    #main-area .slider p{
+        font-size: 27px;
+    }
+
+}
+@media (max-width: 768px){
+
+    body{
+        height: 100%;
+    }
+    .container{
+        height: 100%;
+    }
+    .navbar{
+        height: 15%;
+    }
+    #main-area{
+        height: 100%;
+    }
+    #main-area .slider{
+        
+        height: 100%;
+        flex-basis: 40%;
+    }
+    #main-area .non-slider{
+      
+        height: 100%;    
+        flex-basis: 60%;
+    }
+    #main-area .slider p{
+        font-size: 27px;
+    }
+
+    #main-area .slider figure img{
+        width: 100%;
+        height: 500px;
+    }
+ }
+@media (max-width: 649px){
+
+    #main-area .slider{
+       
+        height: 100%;
+        flex-basis: 50%;
+    }
+    #main-area .non-slider{
+       
+        height: 100%;    
+        flex-basis: 50%;
+    }
+    
+    #main-area .slider figure img{
+        width: 100%;
+        height: 500px;
+    }
+    #main-area .slider h1{
+        font-size: 60px;
+    }
+    #main-area .slider p{
+        font-size: 20px;
+        padding-top: 135px;
+    }
+
+}
+
+.non-sliderOne h1{
+    text-align: center;
+    font-size: 20px;
+}
+.homeServices a strong{
+    font-size: 20px;
+    color: rgb(253, 176, 9);
+}
+.homeServices i{
+    margin: 20px 10px;
+    font-size: 20px;
+    color: white;
+}
+
+/* media queries for homeServices */
+@media (max-width: 959px){
+    .non-slider{
+        display: flex;
+        flex-direction: row;
+    }
+    .non-slider{
+        flex-flow: row wrap;
+        
+    }
+
+}
+@media (max-width: 649px){
+    #main-area .non-slider{
+        flex-direction: row;
+    }
+    
+}
+.more .one .two .three{
+    animation: 5s homeServices 5s;
+}
+@keyframes homeServices{
+    0%{margin-top: 0}
+    25%{margin-top:0}
+    50%{margin-top:10px}
+    75%{margin-top:10px}
+    100%{margin-top:0}
+}
+
+/* media queries fron sign up button */
+
+@media (max-width: 1440px){
+    .non-slider .login  .submitinput{
+        margin-left: 380px;
+    }
+}
+@media (max-width: 1024px){
+    .non-slider .login  .submitinput{
+        margin-left: 250px;
+    }
+}
+@media (max-width: 959px){
+    .non-slider .login  .submitinput{
+        margin-left: 270px;
+    }
+    
+}
+@media (max-width: 649px){
+    .non-slider .login .submitinput{
+        margin-left: 118px;
+    }
+}
+.save{
+    border: 2px solid black;
+    width: 20%;
+    float: left;
+    margin: 20px;
+    margin-left: 30px;
+    padding: 20px;
+    text-align: center;
+    height: 200px;
+}
+.adsArea{
+    widows: 100%;
+    margin: 20px;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.window{
+ 
+    width: 23%;
+    margin-left: 22px;
+    text-align: center;
+    height: 250px;
+    background-color:#4f7de0;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,.9);
+}
+.window:hover{
+    background: #6b9aff;
+}
+.window i {
+    margin-top: 10px;
+    font-size: 80px;
+    color: rgb(253, 176, 9);
+}
+.window h1 {
+    font-size: 32px;
+    color: rgb(253, 176, 9);
+}
+/* Media querry for window part */
+@media (max-width: 1440px){
+.window{
+    height: 170px;
+}
+.window h1 {
+    font-size: 25px;
+}
+.window i {
+    margin-top: 10px;
+    font-size: 50px;
+}
+#main-area .slider .longParagraph p{
+    font-size: 20px;
+    padding-top: 50px;
+}
+#main-area .slider .Two p{
+    color: goldenrod;
+    padding-top: 50px;
+}
+#main-area .slider .Three p{
+    color: white;
+    padding-top: 50px;
+}
+#main-area .slider .Five p{
+    color: white;
+    padding-top: 50px;
+}
+#main-area .slider .Four p{
+    color: white;
+    padding-top: 50px;
+}
+#main-area .slider h1{
+    font-size: 90px;
+    font-weight: bold;
+    color: rgb(253, 176, 9);
+    text-align: center;
+    position: absolute;
+    padding-top: 30px;
+    width: 20%;
+}
+}
+@media (max-width: 1024px){
+    #main-area .main-area-images{
+    }
+    #main-area .slider .longParagraph p{
+        font-size: 20px;
+        padding-top: 80px;
+    }
+    #main-area .slider .Two p{
+        color: goldenrod;
+        padding-top: 80px;
+    }
+    #main-area .slider .Three p{
+        color: white;
+        padding-top: 80px;
+    }
+    #main-area .slider .Five p{
+        color: white;
+        padding-top: 80px;
+    }
+    #main-area .slider .Four p{
+        color: white;
+        padding-top: 80px;
+    }
+    #main-area .slider h1{
+        font-size: 90px;
+        font-weight: bold;
+        color: rgb(253, 176, 9);
+        text-align: center;
+        position: absolute;
+        padding-top: 30px;
+        width: 20%;
+    }
+    .adsArea{
+        padding-left: 0px;
+        padding-right: 10px;
+        flex-wrap: wrap;
+        margin-left: 2px;
+    }
+    .window{
+        margin-left: 13px;
+        width: 23%;
+    }
+    .window i {
+        margin-top: 10px;
+        font-size: 40px;
+        color: rgb(253, 176, 9);
+    }
+    .window h1 {
+        font-size: 22px;
+    }
+}
+@media (max-width: 768px){
+    #main-area .slider .longParagraph p{
+        font-size: 20px;
+        padding-top: 90px;
+    }
+    #main-area .slider .Two p{
+        color: goldenrod;
+        padding-top: 70px;
+    }
+    #main-area .slider .Three p{
+        color: white;
+        padding-top: 90px;
+    }
+    #main-area .slider .Five p{
+        color: white;
+        padding-top: 90px;
+    }
+    #main-area .slider .Four p{
+        color: white;
+        padding-top: 90px;
+    }
+    #main-area .slider h1{
+        font-size: 50px;
+        padding-top: 25px;
+    }
+    .adsArea{
+        padding-left: 0px;
+        flex-wrap: wrap;
+        margin-left: 0px;
+        
+    }
+
+    .window{
+        margin-left: 10px;
+        margin-top: 50px;
+        padding-top: 20px;
+        width: 48%;
+        height: 170px;
+    }
+    .window i {
+        margin-top: 10px;
+        font-size: 50px;
+        color: rgb(253, 176, 9);
+    }
+    .window h1 {
+        font-size: 25px;
+    }
+
+}
+.adsArea{
+        padding-left: 40px;
+        flex-wrap: wrap;
+    }
+@media (max-width: 425px){
+    #main-area .slider .longParagraph p{
+        font-size: 18px;
+        padding-top: 40px;
+    }
+    #main-area .slider .Two p{
+        color: goldenrod;
+        padding-top: 40px;
+    }
+    #main-area .slider .Three p{
+        color: white;
+        padding-top: 50px;
+    }
+    #main-area .slider .Five p{
+        color: white;
+        padding-top: 40px;
+    }
+    #main-area .slider .Four p{
+        color: white;
+        padding-top: 40px;
+    }
+    #main-area .slider h1{
+        font-size: 50px;
+        padding-top: 20px;
+    }
+    .adsArea{
+        
+        flex-wrap: wrap;
+        padding-left: 0px;
+        padding-right: 20px;
+    }
+    .window{
+       
+        margin-top: 5px;
+        width: 95%;
+        height: 200px;
+        padding: 20px 5px 0 5px;
+    }
+    .window i {
+        margin-top: 10px;
+        font-size: 70px;
+        color: rgb(253, 176, 9);
+    }
+    .window h3 {
+        font-size: 18px;
+    }
+    .window h1 {
+        font-size: 30px;
+    }
+}
+/* AFTER SIGN UP PAGE STYLING */
+#main-areaPage{
+    /* background:#1da1f2; */
+    display: flex;
+    flex-direction: row;
+    transition: margin-left 0.5s; 
+    border-top: 4px solid #1da1f2;
+    width: 100%;
+    height: 100%;
+}
+.fa-bars{
+    display: none;
+}
+.main-area-left{
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.main-area-right{
+
+    text-align: center;
+    flex-basis: 80%;
+    height: 100%;
+    background-image: linear-gradient(rgba(149,165,166 ,0.9), rgba(52,73,94 ,0.9)), url(https://images.pexels.com/photos/1451448/pexels-photo-1451448.jpeg?cs=srgb&dl=analysis-banking-businesswoman-1451448.jpg&fm=jpg);
+    background-size: cover;
+ }
+.main-area-left .profile{
+    font-size: 20px;
+    color: #1da1f2;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+
+}
+.main-area-left .profileTitle{
+    background:#1da1f2;
+    text-align: center;
+    color: white;
+    width: 80%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 30px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.main-area-left .profileTitle h2{
+    margin-top: 5px;
+    font-size: 16px;
+}
+.main-area-left .profile img{
+    border-radius: 100%;
+    box-shadow: 0 1px 5px rgba(0,0,0,.5);
+}
+.main-area-left .sideMenu{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main-area-left .sideMenu ul{
+    list-style: none;
+}
+.main-area-left .sideMenu ul li{
+    position: relative;
+    margin: auto auto auto 0px;
+    width: 80%;
+    padding: 10px;
+}
+.main-area-left .sideMenu ul a{
+    text-decoration: none;
+    color: #1da1f2;
+}
+.main-area-left .sideMenu ul a:hover{
+    /* color: #3b5998; */
+}
+/* CURRENT PAGE */
+.current{
+    border: 1px solid #9cc5df;
+}
+
+.signupDashboard{ 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 200px;
+    text-align: center;
+    padding: 0 80px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #ddd;
+
+}
+/* animation for sign dashboard message */
+    .signupDashboard h2{
+    position: relative;
+    /* animation: 2s animation;
+    animation-fill-mode: forwards; */
+}
+@keyframes animation{
+    0%{top:-1000px;}
+    100%{top:0px;}
+}
+.signupDashboard h3, span{
+    position: relative;
+    /* animation: 2s leftanimation;
+    animation-fill-mode: forwards; */
+} 
+@keyframes leftanimation{
+    0%{left:-50px;}
+    100%{left:0px;}
+}
+.signupDashboard:hover{
+    color: #ddd;
+
+}
+
+.errMessage{
+    display: none;
+    color: red;
+}
+/* media queries for after sign up page */
+@media (max-width: 1440px){
+    body{
+        height: 100%;
+        width: 100%;
+    }
+    .container{
+        height: 100%;
+    }
+    #main-areaPage{
+       height: 100%;
+       
+    }
+
+}
+@media (max-width: 1024px){
+    .main-area-left .profile p{
+        font-size: 15px;
+    }
+    .main-area-left .sideMenu ul{
+        margin-left: -10px;
+    }
+}
+@media (max-width: 959px){
+    .main-area-left .profile p{
+        font-size: 15px;
+    }
+    .main-area-left .sideMenu ul{
+        margin-left: 10px;
+    }
+}
+@media (max-width: 768px){
+    .main-area-left .sideMenu ul{
+        margin-left: -25px;
+    }
+}
+@media (max-width: 649px){
+   
+    #main-areaPage{
+        flex-flow: column-reverse;
+       height: 100%;
+       overflow: scroll;
+    }
+    .main-area-left{
+        /* flex-basis: 0%; */
+        border-right: none;
+    }
+    .main-area-right{
+        /* flex-basis: 100%; */
+    }
+
+    .main-area-left .sideMenu{
+        width: 60%;
+        font-size: 15px;
+    }
+    .main-area-left .sideMenu ul{
+     
+        margin: 10px auto;
+        margin-left: 50px;
+        width: 100%;
+    }
+    .main-area-left .sideMenu ul li{
+       
+        padding: 12px;
+        margin-left: 30px;
+    }
+    .main-area-left .sideMenu ul a{
+       
+    }
+    .main-area-left .profileTitle{
+        height: 30px;
+    }
+    .main-area-left .profile p{
+        font-size: 15px;
+    }
+    .main-area-left .profile img{
+        height: 50px;
+        width: 50px;
+        margin-left: 10px;
+    }
+  
+    .adsArea{
+       
+        font-size: 20px;
+    }
+    .window{
+        height: 100px;
+        width: 60%;
+        margin-left: 90px;
+        padding-top: 0px;
+    }
+    .window h3{
+        font-size: 10px;
+    }
+    .window i {
+        margin-top: 10px;
+        font-size: 25px;
+        color: rgb(253, 176, 9);
+    }
+    .window h1 {
+        font-size: 10px;
+    }
+    .signupDashboard{ 
+        margin-top: 20px;
+    
+    }
+    .signupDashboard {
+        font-size: 15px;
+        line-height: 1.2;
+        padding-bottom: 20px;
+    }
+
+    }
+  
+/* CSS STYLES FOR MAIN-AREA RIGHT SIDE */
+
+.main-area-right .createAccount{
+    display: none;
+    position: relative;
+    margin: 30px auto 0 auto;
+    width: 50%;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 5px rgba(0,0,0,.5);
+}
+
+.main-area-right .createAccount h2{
+    margin: 0 0 20px;
+    padding: 0;
+    color: #1da1f2;
+    text-align: center;
+    font-size: 16px;
+}
+.main-area-right .createAccount .createAccountInput{
+    position: relative;
+    margin-left: 50px;
+    width: 80%;
+}
+.main-area-right .createAccount .createAccountInput input{
+    width: 80%;
+    padding: 12px 0 12px 12px;
+    margin-top: 8px;
+    font-size: 13px;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background: transparent;
+    border: 1px solid #1da1f2;
+    outline: none;
+}
+
+
+
+.main-area-right .createAccount .submitinput{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #1da1f2;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 13px;
+    text-align: center;
+    margin: 13px auto 0 -30px;
+    width: 67%;
+}
+.main-area-right .createAccount .submitinput:hover{
+    background: #1da1f2;
+    opacity: .9;
+    color: white;
+}
+.closecreateAccount-icon{
+    text-decoration: none;
+    font-size: 30px;
+    color: #1da1f2;
+    position: absolute;
+    top: 0;
+    right: 15px;
+
+}
+.createAccount .selectStaff{
+    width: 80%;
+    margin-left: -5px;
+}
+.createAccount select{
+
+    width: 67%;
+    height: 50px;
+    margin: 10px auto 10px -22px;
+    padding-left: 17px;
+    background: transparent;
+    color: gray;
+    font-size: 16px;
+    border: 1px solid #1da1f2;
+    border-radius: 25px;
+    outline: none;
+
+}
+.userprofilepar{
+    font-size: 16px;
+}
+
+/* CREATE BANK ACCOUNT NOTIFICATION */
+
+.createAccNotification{
+    display: none;
+}
+.successmsg{
+    display: none;
+    margin: 20px auto;
+}
+
+/* media queries fron sign up button */
+
+@media (max-width: 1439px){
+    .main-area-right .createAccount .submitinput{
+        margin-left:0;
+    }
+}
+
+@media (min-width: 1800px){
+    .main-area-right .createAccount{
+        width: 50%;
+    }
+    .main-area-right .createAccount .createAccountInput{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto  auto 180px;
+        width: 80%;
+    } 
+    .main-area-right .createAccount .submitinput{
+        width: 64%;
+        margin-left: -2px;
+    } 
+
+    .navbar{
+        height: 10%;
+    }
+    
+}
+@media (max-width: 1440px){
+    .main-area-right .createAccount{
+        width: 90%;
+    }
+    .main-area-right .createAccount .createAccountInput{
+        position: relative;
+        margin-left: 45px;
+        width: 80%;
+    } 
+    .main-area-right .createAccount .submitinput{
+        width: 64%;
+        margin-left: -110px;
+    } 
+
+    .navbar{
+        height: 10%;
+    }
+    .createAccount select{
+        margin-left: -100px;
+    }
+    
+}
+
+@media (max-width: 1024px){
+    .main-area-right .createAccount{
+        width: 90%;
+    }
+    .main-area-right .createAccount .createAccountInput{
+        position: relative;
+        margin-left: 45px;
+        width: 80%;
+    } 
+    .main-area-right .createAccount .submitinput{
+        width: 64%;
+        margin-left: -35px;
+    } 
+
+    .navbar{
+        height: 10%;
+    }
+    .createAccount select{
+        margin-left: -50px;
+    }
+    
+}
+@media (max-width: 960px){
+    .main-area-right .createAccount{
+        width: 90%;
+    }
+    .main-area-right .createAccount .createAccountInput{
+        position: relative;
+        margin-left: 45px;
+        width: 80%;
+    }
+    .main-area-right .createAccount .submitinput{
+        width: 64%;
+        margin-left: 10px;
+    }
+
+    .navbar{
+        height: 10%;
+    }
+    .createAccount select{
+        width: 85%;
+        margin-left: 0px;
+    }
+    
+}
+@media (max-width: 649px){
+    .main-area-right .createAccount{
+        width: 90%;
+        font-size: 10px;
+        margin-top: 10px;
+    }
+    .main-area-right .createAccount .createAccountInput{
+        position: relative;
+        margin-left: 45px;
+        width: 80%;
+        padding: 0;
+    }
+    .main-area-right .createAccount .createAccountInput input{
+        height: 15px;
+        padding: 6px 0 5px 15px;
+        margin: 3px auto;
+    }
+    .createAccount .createAccountInput select{
+        height: 27px;
+        width: 86%;
+        margin: 3px auto auto 2px;
+    }
+    .createAccount .createAccountInput select option{
+        font-size: 10px;
+        background-size: 50%;
+    }
+    .main-area-right .createAccount .submitinput{
+        width: 67%;
+        margin-left: 20px;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .navbar{
+        height: 10%;
+    }
+    .createAccount select{
+        margin-left: 7px;
+    }
+}
+
+/* TRANSACTION FIELD */
+.main-area-right .transactionsPage{
+
+    display: none;
+    position: relative;
+    margin: 40px auto 0 auto;
+    width: 95%;
+    height: 600px;
+    overflow: auto;
+    background: white;
+    color: black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    box-shadow: 0 1px 5px rgba(0,0,0,.5);
+
+}
+
+.main-area-right .transactionsPage h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+.main-area-right .transactionsPage table{
+    position: relative;
+    width: 100%;
+    background: transparent;
+    border-collapse: collapse;
+
+}
+
+
+.main-area-right .transactionsPage table, th, td{
+    margin:auto;
+    margin-left: 5px;
+
+   border: 1px solid #ddd;
+
+    text-align: center;
+    height: 40px;
+    table-layout: fixed;
+    
+}
+
+.main-area-right .transactionsPage .singleAccountView{
+    display: flex;
+}
+.main-area-right .transactionsPage .singleAccountView .singleAccountViewOne{
+    flex-basis: 60%;
+}
+.main-area-right .transactionsPage .singleAccountView .singleAccountViewTwo{
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+/* single account view two */
+
+.main-area-right .transactionsPage .singleAccountView .singleAccountViewTwo button{
+    width: 30%;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 25px;
+
+}
+.main-area-right .transactionsPage .singleAccountView .singleAccountViewTwo button:hover{
+    background: #1da1f2;
+    color: white;
+}
+.main-area-right .transactionsPage .singleAccountView .singleAccountViewTwo .green{
+    background: green;
+}
+.main-area-right .transactionsPage .singleAccountView .singleAccountViewTwo .yellow{
+    background: rgb(253, 176, 9);
+}
+.main-area-right .transactionsPage .singleAccountView .singleAccountViewTwo .red{
+    background: red;
+}
+/* media queries for transactions */
+@media (max-width: 1024px){
+    .main-area-right .transactionsPage{
+        height: 600px;
+        font-size: 10px;
+       
+    }
+    .main-area-right .transactionsPage .singleAccountView .singleAccountViewTwo button{
+        width: 35%;
+    }
+}
+
+@media (max-width: 959px){
+    .main-area-right .transactionsPage{
+        font-size: 13px;
+        height: 600px;
+    }
+    .main-area-right .transactionsPage .singleAccountView .singleAccountViewTwo button{
+        width: 50%;
+    }
+}
+
+@media (max-width: 649px){
+    .main-area-right .transactionsPage{
+        font-size: 13px;
+        margin-top: 10px;
+        height: 280px;
+        /* overflow: auto; */
+
+    }
+    .main-area-right .transactionsPage .singleAccountView .singleAccountViewTwo button{
+        width: 67%;
+    }
+    
+}
+
+/* AFTER LOGIN DASHBOARD STYLING */
+
+
+
+/* media queries for after login dashboard page */
+
+
+/* VIEW ACCOUNTS STYLING */
+.main-area-right .transactionsPage table tr .submitinput{
+    background: transparent;
+    width: 50px;
+    height: 18px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(253, 176, 9);
+    cursor: pointer;
+    padding: 1px;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    margin-left: 1px;
+}
+.main-area-right .transactionsPage table tr .submitinput:hover{
+    background: rgb(241, 194, 92);
+    color: #4a6f8d;
+}
+.main-area-right .transactionsPage table tr i{
+    margin: 0;
+    margin-left: 2px;
+    margin-top: 2px;
+    color: gold;
+}
+.main-area-right .transactionsPage table tr i:hover{
+    color: #ddd;
+}
+
+/* VIEW SPECIFIC ACCOUNT RECORD */
+.main-area-right .transactionsPage img{
+    border-radius: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,.9);
+}
+
+/* ADMIN AND STAFF DASHBOARD TABLE */
+.newusersTable .transactionsPageHome{
+    position: relative;
+    margin: 40px auto 0 auto;
+    width: 95%;
+    height: 600px;
+    overflow: auto;
+    background: white;
+    color: black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 5px rgba(0,0,0,.5);
+}
+
+
+.main-area-right .transactionsPageHome h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+.main-area-right .transactionsPageHome table{
+    position: relative;
+    width: 100%;
+    background: transparent;
+    border-collapse: collapse;
+
+}
+
+.main-area-right .transactionsPageHome table, th, td{
+    margin:auto;
+    margin-left: 5px;
+    text-align: center;
+    height: 40px;
+    table-layout: fixed;
+    
+}
+
+.main-area-right .transactionsPageHome table tr .submitinput{
+    background: transparent;
+    width: 50px;
+    height: 18px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(253, 176, 9);
+    cursor: pointer;
+    padding: 1px;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    margin-left: 1px;
+}
+.main-area-right .transactionsPageHome table tr .submitinput:hover{
+    background: rgb(241, 194, 92);
+    color: #4a6f8d;
+}
+.main-area-right .transactionsPageHome table tr i{
+    margin: 0;
+    margin-left: 2px;
+    margin-top: 2px;
+    color: gold;
+}
+.main-area-right .transactionsPageHome table tr i:hover{
+    color: #ddd;
+}
+/* media queries for transactionspageHome */
+@media (max-width: 1024px){
+    .main-area-right .transactionsPageHome{
+        font-size: 10px;
+        height: 600px;
+    }
+}
+
+@media (max-width: 959px){
+    .main-area-right .transactionsPageHome{
+        font-size: 10px;
+        height: 600px;
+        overflow: auto;
+    }
+}
+
+@media (max-width: 649px){
+    .main-area-right{
+        height: 50%;
+    }
+    .main-area-right .transactionsPageHome{
+        font-size: 10px;
+        margin-top: 10px;
+        height: 280px;
+        overflow: auto;
+
+    }
+    .navbar{
+        background-color: white;
+        height: 50px;
+    }
+    /* .newusersTable{
+        
+        margin-top: 10px;
+    } */
+    
+}
+/* ADMIN CREATE ACCOUNT SELECT PART */
+.createAccountInput select{
+    width: 78%;
+}
+@media (min-width: 1800px){
+    .createAccountInput select{
+        margin-left: 2px;
+        width: 80%;
+    }
+}
+@media (min-width: 1440px){
+    .createAccountInput select{
+        margin-left: 4px;
+        width: 80%;
+    }
+}
+@media (min-width: 960px){
+    .createAccountInput select{
+        margin-left: 8px;
+        width: 80%;
+    }
+}
+
+/* admin compare password error message */
+.signupconflictmsg{
+    text-align: center;
+    margin-top: 3px;
+}
+/* ADMIN CREATED STAFF/ADMIN */
+
+.createdstaff{
+    display: none;
+    margin: 70px auto;
+    color:#1da1f2;
+    width: 60%;
+    background: #fff;
+    padding: 20px;
+
+}
+.account-detail{
+    border: 1px solid gray;
+    height: 30px;
+    width: 50%;
+    margin: auto;
+    display: flex;
+}
+.account-detail input{
+    border: none;
+    background: transparent;
+    height: 30px;
+}
+.inputright{
+    border-right: 1px solid gray;
+    flex-basis: 70%;
+}
+.inputleft{
+    flex-basis: 30%;
+}
+
+.accountDetails{
+    text-align: initial;
+    position: relative;
+    width: 50%;
+    margin: 5px auto;
+}
+
+.paragraphs .paragraph {
+    border: 1px solid gray;
+    margin-right:5px;
+    padding: 10px; 
+}
+
+.fixedArea{
+   
+}
+#footerId{
+    transition: margin-left 0.5s;
+}

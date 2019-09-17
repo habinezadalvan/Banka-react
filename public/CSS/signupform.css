@@ -1,0 +1,186 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(149,165,166 ,0.9), rgba(52,73,94 ,0.9)), url(https://images.pexels.com/photos/1451448/pexels-photo-1451448.jpeg?cs=srgb&dl=analysis-banking-businesswoman-1451448.jpg&fm=jpg);
+    background-size: cover;
+}
+/* css styles for user sign up */
+
+.non-slider{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.signUp{
+    position: relative;
+    margin: 35px auto;
+    width: 30%;
+    background: white;
+    color: #4f7de0;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 5px rgba(0,0,0,.5);
+    transition: transform 1s;
+    /* animation: 1s animation; */
+    animation-fill-mode: forwards;
+}
+
+/* signup keyframes animation */
+@keyframes animation{
+    0%{top:-100px;}
+    100%{top:0px;}
+}
+
+.signUp h2{
+    padding: 0;
+    color: #1da1f2;
+    text-align: center;
+}
+.signUp .signUpInput{
+    position: relative;
+    margin: 0 auto 0 75px;
+    width: 80%;
+}
+.signUp .signUpInput input{
+    position: relative;
+    width: 80%;
+    padding: 17px 0 17px 17px;
+    margin: 5px auto;
+    font-size: 16px;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background: transparent;
+    outline: none;
+    border: 1px solid #1da1f2;
+}
+
+
+.signUp input[type="submit"]{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    color: #1da1f2;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    text-align: center;
+    width: 64%;
+    padding: 17px 0;
+    margin: 15px auto 40px 80px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.signUp input[type="submit"]:hover{
+    background: #1da1f2;
+    opacity: .9;
+    color: white;
+}
+.closeSignUp-icon{
+    text-decoration: none;
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 15px;
+
+}
+.errMessage{
+    display: none;
+    color: red;
+} 
+
+/* media queries for login */
+@media (min-width: 1800px){
+    .signUp .signUpInput{
+        margin: 0 auto 0 230px;
+    }
+     .signUp{
+        width: 50%;
+    }
+    .signUp input[type="submit"]{
+        margin: 0 auto 40px 230px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 1440px){
+    .signUp .signUpInput{
+        /* margin-left: 120px; */
+        margin:0 auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+     .signUp{
+        width: 50%;
+    }
+    .signUp input[type="submit"]{
+        margin-left: 120px;
+        margin-bottom: 30px;
+        width: 65%;
+    }
+}
+@media (max-width: 1024px){
+    .signUp .signUpInput{
+        /* margin-left: 90px; */
+        margin:0 auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+    .signUp{
+        width: 60%;
+    }
+    .signUp input[type="submit"]{
+        margin-left: 100px;
+        width: 65%;
+        margin-bottom: 30px;
+    }
+    }
+   
+
+@media (max-width: 768px){
+    .signUp .signUpInput{
+        /* margin-left: 85px; */
+        margin:0 auto;
+        width: 81%;
+        display: flex;
+        flex-direction: column;
+    }
+     .signUp{
+        width: 70%;
+    }
+    .signUp input[type="submit"]{
+        margin-left: 90px;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 425px){
+    .signUp .signUpInput{
+        margin:0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+     .signUp{
+        width: 90%;
+    }
+    .signUp input[type="submit"]{
+        margin-left: 35px;
+        width: 80%;
+        margin-bottom: 30px;
+    }
+}
+
+.backButton i {
+    position: relative;
+    font-size: 100px;
+    color: white;
+}
+
+.signupconflictmsg{
+    text-align: center;
+    margin-top: 3px;
+}
