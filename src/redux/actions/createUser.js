@@ -3,7 +3,6 @@ import * as userActionTypes from "./types/userActionTypes";
 
 const {BASE_URL} = process.env;
 
-
 export default formData => dispatch => {
   axios
     .post(`${BASE_URL}/api/v2/auth/signup`, formData)

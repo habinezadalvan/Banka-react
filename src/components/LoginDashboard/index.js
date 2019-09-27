@@ -1,11 +1,15 @@
 import React, { Component, Fragment } from "react";
 import imagesgg from "../../assets/images/icon.png";
+import {connect} from 'react-redux';
+import { ToastContainer, toast} from "react-toastify";
 
 
-export default class LoginDashboard extends Component {
+
+export class LoginDashboard extends Component {
   render() {
     return (
       <Fragment>
+          <ToastContainer position={toast.POSITION.TOP_RIGHT}/>
         <nav className="navbar" id="navbarId">
           <div className="navbar1">
             <span className="open-slide">
@@ -254,3 +258,8 @@ export default class LoginDashboard extends Component {
     );
   }
 }
+
+const mapStateToProps = ({user})=>({user})
+
+
+export default connect(mapStateToProps, null)(LoginDashboard);
