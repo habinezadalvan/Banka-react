@@ -4,9 +4,8 @@ const HtmlWebpackPlugin =require('html-webpack-plugin');
 const copyPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
-
 process.env.NODE_ENV = 'development' | 'production'
-
+const {BASE_URL} = process.env;
 module.exports = {
     node: {
         global: true,
@@ -50,7 +49,7 @@ module.exports = {
             {from: path.join(__dirname, '/public', '/CSS'), to: path.join(__dirname, '/build', '/CSS')}
         ]),
         new Dotenv(),
-        new webpack.EnvironmentPlugin(['BASE_URL', 'NODE_ENV'])
+        new webpack.EnvironmentPlugin(['`BASE_URL','NODE_ENV',])
     ],
     devtool: 'none',
     devServer:{

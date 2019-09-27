@@ -1,45 +1,93 @@
 import React, { Component, Fragment } from "react";
+import Joi from 'joi-browser';
+import { connect } from "react-redux";
+import {Redirect} from 'react-router-dom';
+import loginAction from "../../redux/actions/login";
+import { ToastContainer, toast } from "react-toastify";
 
-export default class Login extends Component {
+export class Login extends Component {
+  state = {
+    email: "",
+    password: ""
+  };
+  onChange = ({ target }) => {
+    const input = {
+      [target.name]: target.value
+    };
+    this.setState(prevState => ({
+      ...prevState,
+      ...input
+    }));
+  };
+
+  onSubmit = e => {
+    e.preventDefault();
+  const {error} = Joi.validate(this.state, schema);
+  
+    if(error){
+      const errors ={}
+      for(let obj of error.details){
+        errors[obj.path[0]] = obj.message.replace(/"/g, '')
+      }
+      Object.keys(errors).forEach(key => {
+        toast.error(errors[key]);
+      })
+    }
+   this.props.loginAction(this.state);
+    this.setState({
+      email: '',
+      password: ''
+    })
+  };
+  componentWillReceiveProps(nextProps){
+    nextProps.logged === true && nextProps.status === 200? <Redirect to='/logindash'/> : true;
+    if (nextProps.status === 200) {
+      nextProps.history.push('/logindash');
+    } else toast.error(nextProps.error.message)
+  }
   render() {
     return (
       <Fragment>
         <section id="main-area">
-          <div class="non-slider">
-            <div class="backButton">
+          <ToastContainer position={toast.POSITION.TOP_RIGHT}/>
+          <div className="non-slider">
+            <div className="backButton">
               <a href="/">
-                <i class="fas fa-angle-left"></i>
+                <i className="fas fa-angle-left"></i>
               </a>
             </div>
-            <div class="login" id="userLogin">
+            <div className="login" id="userLogin">
               <h2>Login form</h2>
-              <form action="/logindash" id="loginFormAtt">
-                <div class="loginInput">
+              <form action="/logindash" id="loginFormAtt" onSubmit={this.onSubmit}>
+                <div className="loginInput">
                   <input
                     type="email"
-                    name=""
+                    name="email"
                     required=""
                     placeholder="Email"
                     id="loginEmailField"
+                    onChange={this.onChange}
+                    value={this.state.email}
                   />
                 </div>
-                <div class="loginInput">
+                <div className="loginInput">
                   <input
                     type="password"
                     id="loginPasswordField"
-                    name=""
+                    name="password"
                     placeholder="Password"
                     required=""
                     id="loginPasswordField"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}"
+                    onChange={this.onChange}
+                    value={this.state.password}
+                    // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}"
                   />
                 </div>
-                <div id="409" class="signupconflictmsg"></div>
+                <div id="409" className="signupconflictmsg"></div>
                 <input
                   type="submit"
                   value="Login"
                   id="loginButton"
-                  onclick="loginSubmitFunction()"
                 />
               </form>
             </div>
@@ -49,3 +97,19 @@ export default class Login extends Component {
     );
   }
 }
+
+const schema ={
+  email: Joi.string().required().label('Email'),
+  password: Joi.string().required().label('Password')
+}
+const mapStateToProps = ({user: {data, message, status, error, logged}}) => ({data, message, status, error, logged})
+// this is the same as the line of code up
+// const mapStateToProps = (state) => {
+//   return {email: state.email,password: state.password}
+// }
+const mapDispatchToProps = {
+  loginAction 
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Login);
+
+

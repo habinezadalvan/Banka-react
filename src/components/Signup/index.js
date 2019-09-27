@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { connect } from "react-redux";
 import createUser from "../../redux/actions/createUser";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 import Joi from "joi-browser";
 
 
