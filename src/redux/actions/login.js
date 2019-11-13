@@ -2,8 +2,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import * as userActionTypes from "./types/userActionTypes";
 
-const { BASE_URL } = process.env;
-
 export const logginSuccess = res => {
   toast.success(res.message);
   return {
@@ -18,38 +16,23 @@ export const loggingError = err => {
     payload: err
   };
 };
-// const loginAction = (formaData) => dispatch =>{
-//     axios
-//     .post(`${BASE_URL}/api/v2/auth/signin`, formaData)
-//     .then(res => {
-//             console.log("res .... ", res);
-//             return dispatch({
-//                 type: userActionTypes.LOGIN,
-//                 payload: res.data
-//             })
-//     })
-//     .catch(err=>{
-//         console.log('Error', err)
-//             return dispatch({
-//                 type: userActionTypes.LOGIN_ERROR,
-//                 payload: err
-//             })
-//     })
-// }
-
-// export default loginAction
-
-const loginActionFunc = input => {
-  return dispatch => {
-    axios
-      .post(`${BASE_URL}/api/v2/auth/signin`, input)
-      .then(res => {
-        return dispatch(logginSuccess(res.data));
-      })
-      .catch(err => {
+const loginAction = formaData => dispatch =>
+  fetch("https://banka-react250.herokuapp.com/api/v2/auth/signin", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify(formaData)
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === 200) {
+        toast.success(data.message);
+        return dispatch(logginSuccess(data));
+      } else {
+        toast.error(data.message);
         return dispatch(loggingError(err.response.data));
-      });
-  };
-};
+      }
+    });
 
-export default loginActionFunc;
+export default loginAction;

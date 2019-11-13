@@ -1,10 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { connect } from "react-redux";
-import createUser from "../../redux/actions/createUser";
-// import "react-toastify/dist/ReactToastify.css";
 import Joi from "joi-browser";
-
+import createUser from "../../redux/actions/createUser";
 
 export class Signup extends Component {
   state = {
@@ -45,14 +43,14 @@ export class Signup extends Component {
         email: "",
         password: "",
         confirmpassword: ""
-      })
+      });
     }
   };
 
   componentWillReceiveProps(nextProps) {
-    nextProps.status === 201
-      ? toast.success(nextProps.message)
-      : toast.error(nextProps.error.message);
+    if (nextProps.status) {
+      nextProps.history.push("/logindash");
+    }
   }
 
   render() {
@@ -63,7 +61,8 @@ export class Signup extends Component {
       password,
       confirmpassword
     } = this.state;
-    const { message } = this.props;
+    const { message, status } = this.props;
+    console.log("status ====", status);
     return (
       <Fragment>
         <section id="main-area">
@@ -76,10 +75,7 @@ export class Signup extends Component {
           <div className="non-slider">
             <div className="signUp" id="userSignUp">
               <h2>Sign Up form</h2>
-              <form
-                id="signupsubmitform"
-                onSubmit={this.handleSubmit}
-              >
+              <form id="signupsubmitform" onSubmit={this.handleSubmit}>
                 <div className="signUpInput">
                   <input
                     type="text"
@@ -170,8 +166,9 @@ const schema = {
       return errors.map(err => {
         switch (err.type) {
           case "string.regex.base":
-              console.log("OPTION ERROR:", err.type);
-            err.message = "The password should have at least one capital and small letter, and a number with 6-12 charaters!";
+            console.log("OPTION ERROR:", err.type);
+            err.message =
+              "The password should have at least one capital and small letter, and a number with 6-12 charaters!";
             return err;
           default:
             err.message;
@@ -198,7 +195,4 @@ const mapStateToProps = ({ user: { message, status, error } }) => ({
   error
 });
 
-export default connect(
-  mapStateToProps,
-  { createUser }
-)(Signup);
+export default connect(mapStateToProps, { createUser })(Signup);
