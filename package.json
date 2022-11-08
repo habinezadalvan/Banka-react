@@ -24,7 +24,7 @@
     "copy-webpack-plugin": "^5.0.4",
     "dotenv": "^8.1.0",
     "dotenv-webpack": "^1.7.0",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "joi-browser": "^13.4.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -36,7 +36,7 @@
     "redux-thunk": "^2.3.0",
     "serve": "^11.1.0",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.8",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.8.0"
   },
   "devDependencies": {
